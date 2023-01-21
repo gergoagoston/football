@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 from flask import Flask,render_template,request
 
-regressor = joblib.load('iplmodel_ridge.sav')
+regressor = 0
 with open('scaler.pkl','rb') as f:
     scaler = pickle.load(f)
 
@@ -11,7 +11,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html',val='')
+    with app.app_context():
+        return render_template('home.html',val='')
 
 @app.route('/predict',methods=['POST'])
 def predict():

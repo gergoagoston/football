@@ -4,8 +4,8 @@ import numpy as np
 from flask import Flask,render_template,request
 
 regressor = 0
-with open('scaler.pkl','rb') as f:
-    scaler = pickle.load(f)
+# with open('scaler.pkl','rb') as f:
+#     scaler = pickle.load(f)
 
 app = Flask(__name__)
 
@@ -144,7 +144,7 @@ def predict():
 
         b = [runs, wickets, overs, runs_in_prev_5, wickets_in_prev_5]
         b = np.array(b).reshape(1,-1)
-        b = scaler.transform(b)
+        # b = scaler.transform(b)
 
         data = np.concatenate((a,b),axis=1)
 

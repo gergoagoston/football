@@ -26,7 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install flake8 pytest
-        pip install flask numpy pickle joblib
+        pip install flask numpy joblib
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |

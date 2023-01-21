@@ -1,0 +1,1 @@
+web gunicorn --pythonpath ipl_score_preditor app::app

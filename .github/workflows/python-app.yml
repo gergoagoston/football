@@ -25,6 +25,7 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
+        pip install scikit-learn
         pip install flake8 pytest
         pip install flask numpy joblib
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
